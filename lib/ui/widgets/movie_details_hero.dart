@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mocat_project/ui/common/colors.dart';
 import 'package:mocat_project/ui/common/text_styles.dart';
+import 'package:mocat_project/ui/widgets/image_placeholder.dart';
 
 class MovieDetailsHero extends StatelessWidget {
   String image;
@@ -27,25 +28,13 @@ class MovieDetailsHero extends StatelessWidget {
       fit: StackFit.passthrough,
     clipBehavior: Clip.none,
       children: [
-        // CachedNetworkImage(
-        //   imageUrl: image,
-        //   placeholder: (context, url) => Container(
-        //     decoration: const BoxDecoration(
-        //       gradient: LinearGradient(
-        //         begin: AlignmentDirectional.topStart,
-        //         end: AlignmentDirectional.bottomEnd,
-        //         colors: [
-        //           MVColors.darkPlaceholderColor,
-        //           MVColors.placeholderColor,
-        //           MVColors.lightPlaceholderColor,
-        //         ]
-        //       ),
-        //     ),
-        //   ),
-        //   errorWidget: (context, url, error) => const Center(child: Icon(Icons.error, color: Colors.grey)),
-        //   fit: BoxFit.cover,
-        // ),
-        Image.network(image, fit: BoxFit.cover,),
+        CachedNetworkImage(
+          imageUrl: image,
+          placeholder: (context, url) => const ImagePlaceholder(),
+          errorWidget: (context, url, error) => const Center(child: Icon(Icons.error, color: Colors.grey)),
+          fit: BoxFit.cover,
+        ),
+        // Image.network(image, fit: BoxFit.cover,),
         Positioned(
           top: 0,
           left: 0,
