@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mocat_project/ui/common/colors.dart';
 import 'package:mocat_project/ui/common/text_styles.dart';
 
 class MovieItem extends StatelessWidget {
@@ -29,9 +30,10 @@ class MovieItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            Container(
               height: 215,
               width: double.infinity,
+              color: MVColors.darkPlaceholderColor,
               child: Image.network(
                 image.toString(),
                 fit: BoxFit.cover,

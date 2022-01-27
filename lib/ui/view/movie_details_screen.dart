@@ -74,6 +74,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     directors: _currentMovie.directors, 
                     writers: _currentMovie.writers, 
                     stars: _currentMovie.stars,
+                    onButtonTap: () {},
                     margin: const EdgeInsets.only(right: 24, left: 24, top: 14),
                   )
                 ],
