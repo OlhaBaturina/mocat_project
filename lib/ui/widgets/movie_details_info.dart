@@ -7,7 +7,7 @@ import 'package:mocat_project/ui/common/button.dart';
 import 'package:mocat_project/utils/formatters.dart';
 
 class MovieDetailsInfo extends StatelessWidget {
-  num duration;
+  int duration;
   String mpaRating;
   String imdbRating;
   List<Genre> genres;
@@ -44,7 +44,7 @@ class MovieDetailsInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Text(genresList(genres), style: MVTextStyles.h3TextGrey,),
+                  child: Text(genresListToSrting(genres), style: MVTextStyles.h3TextGrey,),
                 ),
                 Expanded(
                   child: Row(
@@ -52,14 +52,13 @@ class MovieDetailsInfo extends StatelessWidget {
                       _buildDivider(),
                       Text(mpaRating, style: MVTextStyles.h3TextSemibold),
                       _buildDivider(),
-                      Text(timeDuration(duration), style: MVTextStyles.h3TextSemibold),
+                      Text(timeDurationStr(duration), style: MVTextStyles.h3TextSemibold),
                     ],
                   ),
                 )
-                
               ],
             ),
-          ),          
+          ),
           _buildRichText('Directors: ', directors),
           _buildRichText('Writers: ', writers),
           _buildRichText('Stars: ', stars),
@@ -90,7 +89,7 @@ class MovieDetailsInfo extends StatelessWidget {
           style: MVTextStyles.h3TextGrey,
           children: [
             TextSpan(
-              text: namesList(value), 
+              text: namesListToString(value), 
               style: const TextStyle(fontWeight: FontWeight.bold)
             ),
           ],
@@ -112,16 +111,11 @@ class MovieDetailsInfo extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset('assets/ic_big_star.png', width: 16, height: 16,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: Text(imdbRating, style: MVTextStyles.h1Text),
-                      ),
-                      const Text('/10', style: MVTextStyles.h3TextGrey),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(imdbRating.replaceFirst('.', ','), style: MVTextStyles.h1Text),
                   ),
+                  const Text('/10', style: MVTextStyles.h3TextGrey),
                 ],
               )
             ],

@@ -227,8 +227,8 @@ class _$MovieTearOff {
       @JsonKey(name: 'mpa_rating') required String mpaRating,
       @JsonKey(name: 'imdb_rating') required num imdbRating,
       required int duration,
-      required Uri poster,
-      @JsonKey(name: 'bg_picture') required Uri bgPicture,
+      required String poster,
+      @JsonKey(name: 'bg_picture') required String bgPicture,
       required List<Genre> genres,
       required List<Directors> directors,
       required List<Writers> writers,
@@ -270,9 +270,9 @@ mixin _$Movie {
   @JsonKey(name: 'imdb_rating')
   num get imdbRating => throw _privateConstructorUsedError;
   int get duration => throw _privateConstructorUsedError;
-  Uri get poster => throw _privateConstructorUsedError;
+  String get poster => throw _privateConstructorUsedError;
   @JsonKey(name: 'bg_picture')
-  Uri get bgPicture => throw _privateConstructorUsedError;
+  String get bgPicture => throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
   List<Directors> get directors => throw _privateConstructorUsedError;
   List<Writers> get writers => throw _privateConstructorUsedError;
@@ -295,8 +295,8 @@ abstract class $MovieCopyWith<$Res> {
       @JsonKey(name: 'mpa_rating') String mpaRating,
       @JsonKey(name: 'imdb_rating') num imdbRating,
       int duration,
-      Uri poster,
-      @JsonKey(name: 'bg_picture') Uri bgPicture,
+      String poster,
+      @JsonKey(name: 'bg_picture') String bgPicture,
       List<Genre> genres,
       List<Directors> directors,
       List<Writers> writers,
@@ -359,11 +359,11 @@ class _$MovieCopyWithImpl<$Res> implements $MovieCopyWith<$Res> {
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as String,
       bgPicture: bgPicture == freezed
           ? _value.bgPicture
           : bgPicture // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as String,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -397,8 +397,8 @@ abstract class _$MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
       @JsonKey(name: 'mpa_rating') String mpaRating,
       @JsonKey(name: 'imdb_rating') num imdbRating,
       int duration,
-      Uri poster,
-      @JsonKey(name: 'bg_picture') Uri bgPicture,
+      String poster,
+      @JsonKey(name: 'bg_picture') String bgPicture,
       List<Genre> genres,
       List<Directors> directors,
       List<Writers> writers,
@@ -462,11 +462,11 @@ class __$MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res>
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as String,
       bgPicture: bgPicture == freezed
           ? _value.bgPicture
           : bgPicture // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as String,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -526,10 +526,10 @@ class _$_Movie implements _Movie {
   @override
   final int duration;
   @override
-  final Uri poster;
+  final String poster;
   @override
   @JsonKey(name: 'bg_picture')
-  final Uri bgPicture;
+  final String bgPicture;
   @override
   final List<Genre> genres;
   @override
@@ -604,8 +604,8 @@ abstract class _Movie implements Movie {
       @JsonKey(name: 'mpa_rating') required String mpaRating,
       @JsonKey(name: 'imdb_rating') required num imdbRating,
       required int duration,
-      required Uri poster,
-      @JsonKey(name: 'bg_picture') required Uri bgPicture,
+      required String poster,
+      @JsonKey(name: 'bg_picture') required String bgPicture,
       required List<Genre> genres,
       required List<Directors> directors,
       required List<Writers> writers,
@@ -631,10 +631,10 @@ abstract class _Movie implements Movie {
   @override
   int get duration;
   @override
-  Uri get poster;
+  String get poster;
   @override
   @JsonKey(name: 'bg_picture')
-  Uri get bgPicture;
+  String get bgPicture;
   @override
   List<Genre> get genres;
   @override

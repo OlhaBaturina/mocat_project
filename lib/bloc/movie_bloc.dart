@@ -7,19 +7,19 @@ part 'movie_bloc.freezed.dart';
 part 'movie_event.dart';
 part 'movie_state.dart';
 
-class MoviesBloc extends Bloc<MovieEvent, MovieState> {
+class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   final MoviesRepo moviesRepo;
-  MoviesBloc({required this.moviesRepo}):super(MovieState.loading()) {
-    on<MovieEventLoad>((event, emit) async {
-      emit(const MovieState.loading());
+  MoviesBloc({required this.moviesRepo}):super(const MoviesState.loading()) {
+    on<MoviesEventLoad>((event, emit) async {
+      emit(const MoviesState.loading());
       try {
         ListMovies _moviesLoaded = await moviesRepo
         .getMovies(event.page)
         .timeout(const Duration(seconds: 5));
-        emit(MovieState.loaded(moviesLoaded: _moviesLoaded));
+        emit(MoviesState.loaded(moviesLoaded: _moviesLoaded));
 
       } catch (e) {
-        emit(const MovieState.error());
+        emit(const MoviesState.error());
         rethrow;
       }
     });

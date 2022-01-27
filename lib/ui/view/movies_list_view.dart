@@ -17,11 +17,9 @@ class MoviesList extends StatefulWidget {
   _MoviesListState createState() => _MoviesListState();
 }
 
-class _MoviesListState extends State<MoviesList> {
-  
+class _MoviesListState extends State<MoviesList> { 
   List<Movie> _currentResult = [];
   int _currentPage = 0;
-
   final RefreshController _refreshController = RefreshController();
   bool _isPagination = false;
   
@@ -31,7 +29,7 @@ class _MoviesListState extends State<MoviesList> {
     if(_currentResult.isEmpty) {
       context
       .read<MoviesBloc>() 
-      .add(MovieEvent
+      .add(MoviesEvent
       .load(page: _currentPage));
     }
   }
@@ -67,10 +65,10 @@ class _MoviesListState extends State<MoviesList> {
           ? _buildMoviesList(movies: _currentResult, pages: noviesLoaded.pages)
           : Container();
         },
-        
+
         error: () => ErrorView(onRetryBtnPressed: () =>
           context.read<MoviesBloc>() 
-            .add(const MovieEvent
+            .add(const MoviesEvent
             .load(page: 0))
         )
       )
@@ -78,51 +76,47 @@ class _MoviesListState extends State<MoviesList> {
   }
 
   Widget _buildMoviesList({required List<Movie> movies, int? pages}) {
-    return RefreshConfiguration(
-      dragSpeedRatio: 0.8,
-      enableLoadingWhenNoData: true,
-      child: SmartRefresher(
-        controller: _refreshController,
-        enablePullDown: false,
-        enablePullUp: true,
-        onLoading: () {
-          _isPagination = true;
-          _currentPage++;
-          if(pages != null && _currentPage < pages) {
-            context
-              .read<MoviesBloc>()
-              .add(MovieEvent.load(page: _currentPage));
-          } else {
-            _refreshController.loadNoData();
-          }
-        },
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 0.5,
-            crossAxisCount: 2,
-            mainAxisSpacing: 16,
-            crossAxisSpacing: 26,
-          ),
-          physics: const AlwaysScrollableScrollPhysics(),
-          padding: EdgeInsetsDirectional.only(
-            start: 24, 
-            end: 24, 
-            top: MediaQuery.of(context).padding.top + 32,
-            bottom: MediaQuery.of(context).padding.bottom
-          ),
-          itemCount: movies.length,
-          itemBuilder: (BuildContext context, int idx) {
-            final movie = movies[idx];
-            return MovieItem(
-              image: movie.poster,
-              rating: movie.imdbRating.toStringAsFixed(2),
-              title: movie.title,
-              onCardTap: () => 
-                Navigator.of(context)
-                .pushNamed('/details', arguments: DetailsScreenArgs(movie: movie))
-            );
-          }
+    return SmartRefresher(
+      controller: _refreshController,
+      enablePullDown: false,
+      enablePullUp: true,
+      onLoading: () {
+        _isPagination = true;
+        _currentPage++;
+        if(pages != null && _currentPage < pages) {
+          context
+            .read<MoviesBloc>()
+            .add(MoviesEvent.load(page: _currentPage));
+        } else {
+          _refreshController.loadNoData();
+        }
+      },
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.5,
+          crossAxisCount: 2,
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 26,
         ),
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: EdgeInsetsDirectional.only(
+          start: 24, 
+          end: 24, 
+          top: MediaQuery.of(context).padding.top + 32,
+          bottom: MediaQuery.of(context).padding.bottom
+        ),
+        itemCount: movies.length,
+        itemBuilder: (BuildContext context, int idx) {
+          final movie = movies[idx];
+          return MovieItem(
+            image: movie.poster,
+            imdbRating: movie.imdbRating.toStringAsFixed(1),
+            title: movie.title,
+            onCardTap: () => 
+              Navigator.of(context)
+              .pushNamed('/details', arguments: DetailsScreenArgs(movie: movie))
+          );
+        }
       ),
     );
   }

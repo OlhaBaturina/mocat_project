@@ -1,8 +1,8 @@
 part of 'movie_bloc.dart';
 
 @freezed
-class MovieEvent with _$MovieEvent {
-const factory MovieEvent.load({
-  required int page,
-}) = MovieEventLoad;
+class MoviesEvent with _$MoviesEvent {
+  const factory MoviesEvent.load({
+    required int page,
+  }) = MoviesEventLoad;
 }

@@ -30,8 +30,8 @@ _$_Movie _$$_MovieFromJson(Map<String, dynamic> json) => _$_Movie(
       mpaRating: json['mpa_rating'] as String,
       imdbRating: json['imdb_rating'] as num,
       duration: json['duration'] as int,
-      poster: Uri.parse(json['poster'] as String),
-      bgPicture: Uri.parse(json['bg_picture'] as String),
+      poster: json['poster'] as String,
+      bgPicture: json['bg_picture'] as String,
       genres: (json['genres'] as List<dynamic>)
           .map((e) => Genre.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -54,8 +54,8 @@ Map<String, dynamic> _$$_MovieToJson(_$_Movie instance) => <String, dynamic>{
       'mpa_rating': instance.mpaRating,
       'imdb_rating': instance.imdbRating,
       'duration': instance.duration,
-      'poster': instance.poster.toString(),
-      'bg_picture': instance.bgPicture.toString(),
+      'poster': instance.poster,
+      'bg_picture': instance.bgPicture,
       'genres': instance.genres,
       'directors': instance.directors,
       'writers': instance.writers,

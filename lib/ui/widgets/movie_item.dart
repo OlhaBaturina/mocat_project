@@ -1,23 +1,22 @@
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mocat_project/ui/common/colors.dart';
+import 'package:mocat_project/ui/common/image_placeholder.dart';
 import 'package:mocat_project/ui/common/text_styles.dart';
 
 class MovieItem extends StatelessWidget {
-  Uri image;
-  String rating;
+  String image;
+  String imdbRating;
   String title;
-  EdgeInsetsGeometry margin;
   VoidCallback? onCardTap;
 
   MovieItem({
     Key? key,
     required this.image,
-    required this.rating,
+    required this.imdbRating,
     required this.title,
-    this.margin = EdgeInsets.zero,
     this.onCardTap,
   }) : super(key: key);
 
@@ -31,43 +30,41 @@ class MovieItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              margin: const EdgeInsets.only(bottom: 16),
               height: 215,
               width: double.infinity,
-              color: MVColors.darkPlaceholderColor,
-              child: Image.network(
-                image.toString(),
+              child: CachedNetworkImage(
+                imageUrl: image,
+                placeholder: (context, url) => const ImagePlaceholder(),
+                errorWidget: (context, url, error) => const ImagePlaceholder(),
                 fit: BoxFit.cover,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16, bottom: 10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset('assets/icon_star.png', width: 16, height: 16,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: Text(
-                          rating, 
-                          style:  GoogleFonts.roboto(textStyle: MVTextStyles.h3TextSemibold),
-                        ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset('assets/icon_star.png', width: 16, height: 16,),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Text(
+                        imdbRating.replaceFirst('.', ','), 
+                        style:  GoogleFonts.roboto(textStyle: MVTextStyles.h3TextSemibold),
                       ),
-                      Text(
-                        '/10', 
-                        style: GoogleFonts.roboto(textStyle: MVTextStyles.h4TextGray),
-                      ),
-                    ],
-                  ),
-                  
-                ],
-              ),
+                    ),
+                    Text('/10', style: GoogleFonts.roboto(textStyle: MVTextStyles.h4TextGray)),
+                  ],
+                ),
+              ],
             ),
-            Text(
-              title, 
-              style: MVTextStyles.h2Title,
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Text(
+                title, 
+                style: MVTextStyles.h2Title,
+              ),
             ),
           ],
         ),

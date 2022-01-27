@@ -17,21 +17,20 @@ class LoadingView extends StatelessWidget {
           margin: const EdgeInsets.only(top: 12, bottom: 8),
           height: 20,
           width: 66,
-          color: MVColors.darkPlaceholderColor,
+          color: MVColors.placeholderColor,
         ),
         Container(
           height: 20,
           width: 136,
-          color: MVColors.darkPlaceholderColor,
+          color: MVColors.lightPlaceholderColor,
         ),
         Container(
           margin: const EdgeInsets.only(top: 4),
           height: 20,
           width: 110,
-          color: MVColors.darkPlaceholderColor,
+          color: MVColors.lightPlaceholderColor,
         ),
       ],
-      
     );
   }
 }

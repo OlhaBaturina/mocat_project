@@ -15,21 +15,21 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$MovieEventTearOff {
-  const _$MovieEventTearOff();
+class _$MoviesEventTearOff {
+  const _$MoviesEventTearOff();
 
-  MovieEventLoad load({required int page}) {
-    return MovieEventLoad(
+  MoviesEventLoad load({required int page}) {
+    return MoviesEventLoad(
       page: page,
     );
   }
 }
 
 /// @nodoc
-const $MovieEvent = _$MovieEventTearOff();
+const $MoviesEvent = _$MoviesEventTearOff();
 
 /// @nodoc
-mixin _$MovieEvent {
+mixin _$MoviesEvent {
   int get page => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
@@ -50,41 +50,41 @@ mixin _$MovieEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(MovieEventLoad value) load,
+    required TResult Function(MoviesEventLoad value) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MovieEventLoad value)? load,
+    TResult Function(MoviesEventLoad value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(MovieEventLoad value)? load,
+    TResult Function(MoviesEventLoad value)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MovieEventCopyWith<MovieEvent> get copyWith =>
+  $MoviesEventCopyWith<MoviesEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MovieEventCopyWith<$Res> {
-  factory $MovieEventCopyWith(
-          MovieEvent value, $Res Function(MovieEvent) then) =
-      _$MovieEventCopyWithImpl<$Res>;
+abstract class $MoviesEventCopyWith<$Res> {
+  factory $MoviesEventCopyWith(
+          MoviesEvent value, $Res Function(MoviesEvent) then) =
+      _$MoviesEventCopyWithImpl<$Res>;
   $Res call({int page});
 }
 
 /// @nodoc
-class _$MovieEventCopyWithImpl<$Res> implements $MovieEventCopyWith<$Res> {
-  _$MovieEventCopyWithImpl(this._value, this._then);
+class _$MoviesEventCopyWithImpl<$Res> implements $MoviesEventCopyWith<$Res> {
+  _$MoviesEventCopyWithImpl(this._value, this._then);
 
-  final MovieEvent _value;
+  final MoviesEvent _value;
   // ignore: unused_field
-  final $Res Function(MovieEvent) _then;
+  final $Res Function(MoviesEvent) _then;
 
   @override
   $Res call({
@@ -100,30 +100,31 @@ class _$MovieEventCopyWithImpl<$Res> implements $MovieEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $MovieEventLoadCopyWith<$Res>
-    implements $MovieEventCopyWith<$Res> {
-  factory $MovieEventLoadCopyWith(
-          MovieEventLoad value, $Res Function(MovieEventLoad) then) =
-      _$MovieEventLoadCopyWithImpl<$Res>;
+abstract class $MoviesEventLoadCopyWith<$Res>
+    implements $MoviesEventCopyWith<$Res> {
+  factory $MoviesEventLoadCopyWith(
+          MoviesEventLoad value, $Res Function(MoviesEventLoad) then) =
+      _$MoviesEventLoadCopyWithImpl<$Res>;
   @override
   $Res call({int page});
 }
 
 /// @nodoc
-class _$MovieEventLoadCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
-    implements $MovieEventLoadCopyWith<$Res> {
-  _$MovieEventLoadCopyWithImpl(
-      MovieEventLoad _value, $Res Function(MovieEventLoad) _then)
-      : super(_value, (v) => _then(v as MovieEventLoad));
+class _$MoviesEventLoadCopyWithImpl<$Res>
+    extends _$MoviesEventCopyWithImpl<$Res>
+    implements $MoviesEventLoadCopyWith<$Res> {
+  _$MoviesEventLoadCopyWithImpl(
+      MoviesEventLoad _value, $Res Function(MoviesEventLoad) _then)
+      : super(_value, (v) => _then(v as MoviesEventLoad));
 
   @override
-  MovieEventLoad get _value => super._value as MovieEventLoad;
+  MoviesEventLoad get _value => super._value as MoviesEventLoad;
 
   @override
   $Res call({
     Object? page = freezed,
   }) {
-    return _then(MovieEventLoad(
+    return _then(MoviesEventLoad(
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -134,22 +135,22 @@ class _$MovieEventLoadCopyWithImpl<$Res> extends _$MovieEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MovieEventLoad implements MovieEventLoad {
-  const _$MovieEventLoad({required this.page});
+class _$MoviesEventLoad implements MoviesEventLoad {
+  const _$MoviesEventLoad({required this.page});
 
   @override
   final int page;
 
   @override
   String toString() {
-    return 'MovieEvent.load(page: $page)';
+    return 'MoviesEvent.load(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MovieEventLoad &&
+            other is MoviesEventLoad &&
             const DeepCollectionEquality().equals(other.page, page));
   }
 
@@ -159,8 +160,8 @@ class _$MovieEventLoad implements MovieEventLoad {
 
   @JsonKey(ignore: true)
   @override
-  $MovieEventLoadCopyWith<MovieEventLoad> get copyWith =>
-      _$MovieEventLoadCopyWithImpl<MovieEventLoad>(this, _$identity);
+  $MoviesEventLoadCopyWith<MoviesEventLoad> get copyWith =>
+      _$MoviesEventLoadCopyWithImpl<MoviesEventLoad>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -193,7 +194,7 @@ class _$MovieEventLoad implements MovieEventLoad {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(MovieEventLoad value) load,
+    required TResult Function(MoviesEventLoad value) load,
   }) {
     return load(this);
   }
@@ -201,7 +202,7 @@ class _$MovieEventLoad implements MovieEventLoad {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MovieEventLoad value)? load,
+    TResult Function(MoviesEventLoad value)? load,
   }) {
     return load?.call(this);
   }
@@ -209,7 +210,7 @@ class _$MovieEventLoad implements MovieEventLoad {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(MovieEventLoad value)? load,
+    TResult Function(MoviesEventLoad value)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -219,20 +220,20 @@ class _$MovieEventLoad implements MovieEventLoad {
   }
 }
 
-abstract class MovieEventLoad implements MovieEvent {
-  const factory MovieEventLoad({required int page}) = _$MovieEventLoad;
+abstract class MoviesEventLoad implements MoviesEvent {
+  const factory MoviesEventLoad({required int page}) = _$MoviesEventLoad;
 
   @override
   int get page;
   @override
   @JsonKey(ignore: true)
-  $MovieEventLoadCopyWith<MovieEventLoad> get copyWith =>
+  $MoviesEventLoadCopyWith<MoviesEventLoad> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$MovieStateTearOff {
-  const _$MovieStateTearOff();
+class _$MoviesStateTearOff {
+  const _$MoviesStateTearOff();
 
   MovieStateLoading loading() {
     return const MovieStateLoading();
@@ -250,10 +251,10 @@ class _$MovieStateTearOff {
 }
 
 /// @nodoc
-const $MovieState = _$MovieStateTearOff();
+const $MoviesState = _$MoviesStateTearOff();
 
 /// @nodoc
-mixin _$MovieState {
+mixin _$MoviesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -301,19 +302,19 @@ mixin _$MovieState {
 }
 
 /// @nodoc
-abstract class $MovieStateCopyWith<$Res> {
-  factory $MovieStateCopyWith(
-          MovieState value, $Res Function(MovieState) then) =
-      _$MovieStateCopyWithImpl<$Res>;
+abstract class $MoviesStateCopyWith<$Res> {
+  factory $MoviesStateCopyWith(
+          MoviesState value, $Res Function(MoviesState) then) =
+      _$MoviesStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MovieStateCopyWithImpl<$Res> implements $MovieStateCopyWith<$Res> {
-  _$MovieStateCopyWithImpl(this._value, this._then);
+class _$MoviesStateCopyWithImpl<$Res> implements $MoviesStateCopyWith<$Res> {
+  _$MoviesStateCopyWithImpl(this._value, this._then);
 
-  final MovieState _value;
+  final MoviesState _value;
   // ignore: unused_field
-  final $Res Function(MovieState) _then;
+  final $Res Function(MoviesState) _then;
 }
 
 /// @nodoc
@@ -325,7 +326,7 @@ abstract class $MovieStateLoadingCopyWith<$Res> {
 
 /// @nodoc
 class _$MovieStateLoadingCopyWithImpl<$Res>
-    extends _$MovieStateCopyWithImpl<$Res>
+    extends _$MoviesStateCopyWithImpl<$Res>
     implements $MovieStateLoadingCopyWith<$Res> {
   _$MovieStateLoadingCopyWithImpl(
       MovieStateLoading _value, $Res Function(MovieStateLoading) _then)
@@ -342,7 +343,7 @@ class _$MovieStateLoading implements MovieStateLoading {
 
   @override
   String toString() {
-    return 'MovieState.loading()';
+    return 'MoviesState.loading()';
   }
 
   @override
@@ -423,7 +424,7 @@ class _$MovieStateLoading implements MovieStateLoading {
   }
 }
 
-abstract class MovieStateLoading implements MovieState {
+abstract class MovieStateLoading implements MoviesState {
   const factory MovieStateLoading() = _$MovieStateLoading;
 }
 
@@ -439,7 +440,7 @@ abstract class $MovieStateLoadedCopyWith<$Res> {
 
 /// @nodoc
 class _$MovieStateLoadedCopyWithImpl<$Res>
-    extends _$MovieStateCopyWithImpl<$Res>
+    extends _$MoviesStateCopyWithImpl<$Res>
     implements $MovieStateLoadedCopyWith<$Res> {
   _$MovieStateLoadedCopyWithImpl(
       MovieStateLoaded _value, $Res Function(MovieStateLoaded) _then)
@@ -478,7 +479,7 @@ class _$MovieStateLoaded implements MovieStateLoaded {
 
   @override
   String toString() {
-    return 'MovieState.loaded(moviesLoaded: $moviesLoaded)';
+    return 'MoviesState.loaded(moviesLoaded: $moviesLoaded)';
   }
 
   @override
@@ -568,7 +569,7 @@ class _$MovieStateLoaded implements MovieStateLoaded {
   }
 }
 
-abstract class MovieStateLoaded implements MovieState {
+abstract class MovieStateLoaded implements MoviesState {
   const factory MovieStateLoaded({required ListMovies moviesLoaded}) =
       _$MovieStateLoaded;
 
@@ -586,7 +587,8 @@ abstract class $MovieStateErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MovieStateErrorCopyWithImpl<$Res> extends _$MovieStateCopyWithImpl<$Res>
+class _$MovieStateErrorCopyWithImpl<$Res>
+    extends _$MoviesStateCopyWithImpl<$Res>
     implements $MovieStateErrorCopyWith<$Res> {
   _$MovieStateErrorCopyWithImpl(
       MovieStateError _value, $Res Function(MovieStateError) _then)
@@ -603,7 +605,7 @@ class _$MovieStateError implements MovieStateError {
 
   @override
   String toString() {
-    return 'MovieState.error()';
+    return 'MoviesState.error()';
   }
 
   @override
@@ -684,6 +686,6 @@ class _$MovieStateError implements MovieStateError {
   }
 }
 
-abstract class MovieStateError implements MovieState {
+abstract class MovieStateError implements MoviesState {
   const factory MovieStateError() = _$MovieStateError;
 }

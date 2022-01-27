@@ -24,7 +24,7 @@ class MVButton extends StatelessWidget {
       height: 48,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(2),
-        color: MVColors.accentRedColor,
+        color: MVColors.redButtonColor,
         boxShadow: [BoxShadow(
           color: color,
           offset: const Offset(2, 2),

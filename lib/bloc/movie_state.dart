@@ -1,8 +1,8 @@
 part of 'movie_bloc.dart';
 
 @freezed
-class MovieState with _$MovieState {
-const factory MovieState.loading() = MovieStateLoading;
-const factory MovieState.loaded({required ListMovies moviesLoaded}) = MovieStateLoaded;
-const factory MovieState.error() = MovieStateError;
+class MoviesState with _$MoviesState {
+  const factory MoviesState.loading() = MovieStateLoading;
+  const factory MoviesState.loaded({required ListMovies moviesLoaded}) = MovieStateLoaded;
+  const factory MoviesState.error() = MovieStateError;
 }

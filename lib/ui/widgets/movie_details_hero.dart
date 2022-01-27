@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mocat_project/ui/common/colors.dart';
+import 'package:mocat_project/ui/common/image_placeholder.dart';
 import 'package:mocat_project/ui/common/text_styles.dart';
-import 'package:mocat_project/ui/widgets/image_placeholder.dart';
 
 class MovieDetailsHero extends StatelessWidget {
   String image;
@@ -26,15 +26,14 @@ class MovieDetailsHero extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       fit: StackFit.passthrough,
-    clipBehavior: Clip.none,
+      clipBehavior: Clip.none,
       children: [
         CachedNetworkImage(
           imageUrl: image,
           placeholder: (context, url) => const ImagePlaceholder(),
-          errorWidget: (context, url, error) => const Center(child: Icon(Icons.error, color: Colors.grey)),
+          errorWidget: (context, url, error) => const ImagePlaceholder(),
           fit: BoxFit.cover,
         ),
-        // Image.network(image, fit: BoxFit.cover,),
         Positioned(
           top: 0,
           left: 0,
@@ -53,7 +52,6 @@ class MovieDetailsHero extends StatelessWidget {
                 ]
               ),
             ),
-            
           )
         ),
         Positioned(
@@ -72,7 +70,6 @@ class MovieDetailsHero extends StatelessWidget {
                 ),
                 Text(description, style: MVTextStyles.h3Text,),
               ],
-              
             ),
           ),
         )

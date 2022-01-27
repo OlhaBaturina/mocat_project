@@ -7,9 +7,8 @@ import 'package:mocat_project/ui/view/movies_list_view.dart';
 
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  HomeScreen({Key? key, }) : super(key: key);
+  
   final repository = MoviesRepo();
 
   @override

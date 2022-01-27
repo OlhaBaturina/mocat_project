@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: MVColors.blackBackground
       ),
       themeMode: ThemeMode.light,      
-      home: HomeScreen(title: 'MoCat',),
+      home: HomeScreen(),
       routes: {
         '/details': (context) => const DetailsScreen(),
       },
