@@ -37,6 +37,7 @@ class _MoviesListState extends State<MoviesList> {
   @override
   void dispose() {
     super.dispose();
+    _refreshController.dispose();
   }
 
   @override
