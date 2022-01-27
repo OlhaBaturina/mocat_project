@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mocat_project/bloc/movie_bloc.dart';
 import 'package:mocat_project/model/movie.dart';
+import 'package:mocat_project/ui/view/error_view_screen.dart';
+import 'package:mocat_project/ui/view/loading_view_screem.dart';
 import 'package:mocat_project/ui/view/movie_details_screen.dart';
 import 'package:mocat_project/ui/widgets/movie_item.dart';
 import 'package:provider/src/provider.dart';
@@ -35,9 +37,7 @@ class _MoviesListState extends State<MoviesList> {
     
     return Scaffold(
       body: state.when(
-        loading: () => Center(
-          child: CircularProgressIndicator(color: Colors.deepPurple[50])
-        ),
+        loading: () => _buildLoadingView(),
         
         loaded: (characterLoaded) {
         _currentResult = characterLoaded.movies;
@@ -45,7 +45,12 @@ class _MoviesListState extends State<MoviesList> {
             ? _buildMoviesList(_currentResult)
             : Container();
         },
-        error: () => const Text('Nothing found')
+        error: () => ErrorView(onRetryBtnPressed: () =>
+          context
+            .read<MoviesBloc>() 
+            .add(const MovieEvent
+            .load(page: 0))
+        )
       )
     );
   }
@@ -60,7 +65,12 @@ class _MoviesListState extends State<MoviesList> {
           crossAxisSpacing: 26,
         ),
       physics: const AlwaysScrollableScrollPhysics(),
-      padding: EdgeInsetsDirectional.only(start: 24, end: 24, top: MediaQuery.of(context).padding.top + 16),
+      padding: EdgeInsetsDirectional.only(
+        start: 24, 
+        end: 24, 
+        top: MediaQuery.of(context).padding.top + 32,
+        bottom: MediaQuery.of(context).padding.bottom
+      ),
       itemCount: movies.length,
       itemBuilder: (BuildContext context, int idx) {
         final movie = movies[idx];
@@ -72,6 +82,29 @@ class _MoviesListState extends State<MoviesList> {
             Navigator.of(context)
             .pushNamed('/details', arguments: DetailsScreenArgs(movie: movie))
         );
+      }
+    );
+  }
+
+  Widget _buildLoadingView() {
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.5,
+          crossAxisCount: 2,
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 26,
+        ),
+      physics: const AlwaysScrollableScrollPhysics(),
+      padding: EdgeInsetsDirectional.only(
+        start: 24, 
+        end: 24, 
+        top: MediaQuery.of(context).padding.top + 32,
+        bottom: MediaQuery.of(context).padding.bottom
+      ),
+      itemCount: _currentResult.isNotEmpty ? _currentResult.length : 4,
+      itemBuilder: (BuildContext context, int idx) {
+        
+        return const LoadingView();
       }
     );
   }

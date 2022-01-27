@@ -69,7 +69,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   MovieDetailsInfo(
                     mpaRating: _currentMovie.mpaRating, 
                     imdbRating: _currentMovie.imdbRating.toString(),
-                    duration: _currentMovie.duration.toString(), 
+                    duration: _currentMovie.duration, 
                     genres: _currentMovie.genres, 
                     directors: _currentMovie.directors, 
                     writers: _currentMovie.writers, 

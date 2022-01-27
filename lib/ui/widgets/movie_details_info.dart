@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:mocat_project/model/movie.dart';
 import 'package:mocat_project/ui/common/colors.dart';
 import 'package:mocat_project/ui/common/text_styles.dart';
+import 'package:mocat_project/ui/common/button.dart';
+import 'package:mocat_project/utils/formatters.dart';
 
 class MovieDetailsInfo extends StatelessWidget {
-  String duration;
+  num duration;
   String mpaRating;
   String imdbRating;
   List<Genre> genres;
@@ -36,18 +38,25 @@ class MovieDetailsInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 14, bottom: 24),
+            margin: const EdgeInsets.only( bottom: 24),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Text(_genresList(), style: MVTextStyles.h3TextGrey,),
+                  child: Text(genresList(genres), style: MVTextStyles.h3TextGrey,),
                 ),
-                _buildDivider(),
-                Text(mpaRating, style: MVTextStyles.h3TextSemibold),
-                _buildDivider(),
-                Text(duration, style: MVTextStyles.h3TextSemibold),
+                Expanded(
+                  child: Row(
+                    children: [
+                      _buildDivider(),
+                      Text(mpaRating, style: MVTextStyles.h3TextSemibold),
+                      _buildDivider(),
+                      Text(timeDuration(duration), style: MVTextStyles.h3TextSemibold),
+                    ],
+                  ),
+                )
+                
               ],
             ),
           ),          
@@ -81,7 +90,7 @@ class MovieDetailsInfo extends StatelessWidget {
           style: MVTextStyles.h3TextGrey,
           children: [
             TextSpan(
-              text: _namesList(value), 
+              text: namesList(value), 
               style: const TextStyle(fontWeight: FontWeight.bold)
             ),
           ],
@@ -118,46 +127,20 @@ class MovieDetailsInfo extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: onButtonTap,
-              child: Container(
-                width: 180, 
-                height: 48,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(2),
-                  color: MVColors.accentRedColor,
-                  boxShadow: const [BoxShadow(
-                    color: MVColors.placeholderColor,
-                    offset: Offset(2, 2),
-                    blurRadius: 4 
-                  )]
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 14),
-                      child: Image.asset('assets/icon_play.png')
-                    ),
-                    const Text('Watch trailer', style: MVTextStyles.h4Text,)
-                  ],
-                ),
+        MVButton(
+          onPressed: onButtonTap,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(right: 14),
+                child: Image.asset('assets/icon_play.png')
               ),
-            ),
+              const Text('Watch trailer', style: MVTextStyles.h4Text,)
+            ],
           ),
-        ),
+        )
       ])
     );
   }
-
-  String _genresList() => genres
-    .map((genre) => genre.title)
-    .join(', ');
-
-  String _namesList(List data) => data
-    .map((item) => '${item.firstName} ${item.lastName}')
-    .join(', ');
 }
