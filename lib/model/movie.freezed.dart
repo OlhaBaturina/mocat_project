@@ -14,35 +14,35 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ListMovies _$ListMoviesFromJson(Map<String, dynamic> json) {
-  return _ListMovies.fromJson(json);
+MoviesPage _$MoviesPageFromJson(Map<String, dynamic> json) {
+  return _MoviesPage.fromJson(json);
 }
 
 /// @nodoc
-class _$ListMoviesTearOff {
-  const _$ListMoviesTearOff();
+class _$MoviesPageTearOff {
+  const _$MoviesPageTearOff();
 
-  _ListMovies call(
+  _MoviesPage call(
       {required int total,
       required int pages,
       @JsonKey(name: 'results') required List<Movie> movies}) {
-    return _ListMovies(
+    return _MoviesPage(
       total: total,
       pages: pages,
       movies: movies,
     );
   }
 
-  ListMovies fromJson(Map<String, Object?> json) {
-    return ListMovies.fromJson(json);
+  MoviesPage fromJson(Map<String, Object?> json) {
+    return MoviesPage.fromJson(json);
   }
 }
 
 /// @nodoc
-const $ListMovies = _$ListMoviesTearOff();
+const $MoviesPage = _$MoviesPageTearOff();
 
 /// @nodoc
-mixin _$ListMovies {
+mixin _$MoviesPage {
   int get total => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
   @JsonKey(name: 'results')
@@ -50,26 +50,26 @@ mixin _$ListMovies {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ListMoviesCopyWith<ListMovies> get copyWith =>
+  $MoviesPageCopyWith<MoviesPage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListMoviesCopyWith<$Res> {
-  factory $ListMoviesCopyWith(
-          ListMovies value, $Res Function(ListMovies) then) =
-      _$ListMoviesCopyWithImpl<$Res>;
+abstract class $MoviesPageCopyWith<$Res> {
+  factory $MoviesPageCopyWith(
+          MoviesPage value, $Res Function(MoviesPage) then) =
+      _$MoviesPageCopyWithImpl<$Res>;
   $Res call(
       {int total, int pages, @JsonKey(name: 'results') List<Movie> movies});
 }
 
 /// @nodoc
-class _$ListMoviesCopyWithImpl<$Res> implements $ListMoviesCopyWith<$Res> {
-  _$ListMoviesCopyWithImpl(this._value, this._then);
+class _$MoviesPageCopyWithImpl<$Res> implements $MoviesPageCopyWith<$Res> {
+  _$MoviesPageCopyWithImpl(this._value, this._then);
 
-  final ListMovies _value;
+  final MoviesPage _value;
   // ignore: unused_field
-  final $Res Function(ListMovies) _then;
+  final $Res Function(MoviesPage) _then;
 
   @override
   $Res call({
@@ -95,24 +95,24 @@ class _$ListMoviesCopyWithImpl<$Res> implements $ListMoviesCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ListMoviesCopyWith<$Res> implements $ListMoviesCopyWith<$Res> {
-  factory _$ListMoviesCopyWith(
-          _ListMovies value, $Res Function(_ListMovies) then) =
-      __$ListMoviesCopyWithImpl<$Res>;
+abstract class _$MoviesPageCopyWith<$Res> implements $MoviesPageCopyWith<$Res> {
+  factory _$MoviesPageCopyWith(
+          _MoviesPage value, $Res Function(_MoviesPage) then) =
+      __$MoviesPageCopyWithImpl<$Res>;
   @override
   $Res call(
       {int total, int pages, @JsonKey(name: 'results') List<Movie> movies});
 }
 
 /// @nodoc
-class __$ListMoviesCopyWithImpl<$Res> extends _$ListMoviesCopyWithImpl<$Res>
-    implements _$ListMoviesCopyWith<$Res> {
-  __$ListMoviesCopyWithImpl(
-      _ListMovies _value, $Res Function(_ListMovies) _then)
-      : super(_value, (v) => _then(v as _ListMovies));
+class __$MoviesPageCopyWithImpl<$Res> extends _$MoviesPageCopyWithImpl<$Res>
+    implements _$MoviesPageCopyWith<$Res> {
+  __$MoviesPageCopyWithImpl(
+      _MoviesPage _value, $Res Function(_MoviesPage) _then)
+      : super(_value, (v) => _then(v as _MoviesPage));
 
   @override
-  _ListMovies get _value => super._value as _ListMovies;
+  _MoviesPage get _value => super._value as _MoviesPage;
 
   @override
   $Res call({
@@ -120,7 +120,7 @@ class __$ListMoviesCopyWithImpl<$Res> extends _$ListMoviesCopyWithImpl<$Res>
     Object? pages = freezed,
     Object? movies = freezed,
   }) {
-    return _then(_ListMovies(
+    return _then(_MoviesPage(
       total: total == freezed
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -139,14 +139,14 @@ class __$ListMoviesCopyWithImpl<$Res> extends _$ListMoviesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ListMovies implements _ListMovies {
-  const _$_ListMovies(
+class _$_MoviesPage implements _MoviesPage {
+  const _$_MoviesPage(
       {required this.total,
       required this.pages,
       @JsonKey(name: 'results') required this.movies});
 
-  factory _$_ListMovies.fromJson(Map<String, dynamic> json) =>
-      _$$_ListMoviesFromJson(json);
+  factory _$_MoviesPage.fromJson(Map<String, dynamic> json) =>
+      _$$_MoviesPageFromJson(json);
 
   @override
   final int total;
@@ -158,14 +158,14 @@ class _$_ListMovies implements _ListMovies {
 
   @override
   String toString() {
-    return 'ListMovies(total: $total, pages: $pages, movies: $movies)';
+    return 'MoviesPage(total: $total, pages: $pages, movies: $movies)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ListMovies &&
+            other is _MoviesPage &&
             const DeepCollectionEquality().equals(other.total, total) &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
             const DeepCollectionEquality().equals(other.movies, movies));
@@ -180,23 +180,23 @@ class _$_ListMovies implements _ListMovies {
 
   @JsonKey(ignore: true)
   @override
-  _$ListMoviesCopyWith<_ListMovies> get copyWith =>
-      __$ListMoviesCopyWithImpl<_ListMovies>(this, _$identity);
+  _$MoviesPageCopyWith<_MoviesPage> get copyWith =>
+      __$MoviesPageCopyWithImpl<_MoviesPage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ListMoviesToJson(this);
+    return _$$_MoviesPageToJson(this);
   }
 }
 
-abstract class _ListMovies implements ListMovies {
-  const factory _ListMovies(
+abstract class _MoviesPage implements MoviesPage {
+  const factory _MoviesPage(
       {required int total,
       required int pages,
-      @JsonKey(name: 'results') required List<Movie> movies}) = _$_ListMovies;
+      @JsonKey(name: 'results') required List<Movie> movies}) = _$_MoviesPage;
 
-  factory _ListMovies.fromJson(Map<String, dynamic> json) =
-      _$_ListMovies.fromJson;
+  factory _MoviesPage.fromJson(Map<String, dynamic> json) =
+      _$_MoviesPage.fromJson;
 
   @override
   int get total;
@@ -207,7 +207,7 @@ abstract class _ListMovies implements ListMovies {
   List<Movie> get movies;
   @override
   @JsonKey(ignore: true)
-  _$ListMoviesCopyWith<_ListMovies> get copyWith =>
+  _$MoviesPageCopyWith<_MoviesPage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -230,9 +230,9 @@ class _$MovieTearOff {
       required String poster,
       @JsonKey(name: 'bg_picture') required String bgPicture,
       required List<Genre> genres,
-      required List<Directors> directors,
-      required List<Writers> writers,
-      required List<Stars> stars}) {
+      required List<Person> directors,
+      required List<Person> writers,
+      required List<Person> stars}) {
     return _Movie(
       id: id,
       title: title,
@@ -274,9 +274,9 @@ mixin _$Movie {
   @JsonKey(name: 'bg_picture')
   String get bgPicture => throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
-  List<Directors> get directors => throw _privateConstructorUsedError;
-  List<Writers> get writers => throw _privateConstructorUsedError;
-  List<Stars> get stars => throw _privateConstructorUsedError;
+  List<Person> get directors => throw _privateConstructorUsedError;
+  List<Person> get writers => throw _privateConstructorUsedError;
+  List<Person> get stars => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -298,9 +298,9 @@ abstract class $MovieCopyWith<$Res> {
       String poster,
       @JsonKey(name: 'bg_picture') String bgPicture,
       List<Genre> genres,
-      List<Directors> directors,
-      List<Writers> writers,
-      List<Stars> stars});
+      List<Person> directors,
+      List<Person> writers,
+      List<Person> stars});
 }
 
 /// @nodoc
@@ -371,15 +371,15 @@ class _$MovieCopyWithImpl<$Res> implements $MovieCopyWith<$Res> {
       directors: directors == freezed
           ? _value.directors
           : directors // ignore: cast_nullable_to_non_nullable
-              as List<Directors>,
+              as List<Person>,
       writers: writers == freezed
           ? _value.writers
           : writers // ignore: cast_nullable_to_non_nullable
-              as List<Writers>,
+              as List<Person>,
       stars: stars == freezed
           ? _value.stars
           : stars // ignore: cast_nullable_to_non_nullable
-              as List<Stars>,
+              as List<Person>,
     ));
   }
 }
@@ -400,9 +400,9 @@ abstract class _$MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
       String poster,
       @JsonKey(name: 'bg_picture') String bgPicture,
       List<Genre> genres,
-      List<Directors> directors,
-      List<Writers> writers,
-      List<Stars> stars});
+      List<Person> directors,
+      List<Person> writers,
+      List<Person> stars});
 }
 
 /// @nodoc
@@ -474,15 +474,15 @@ class __$MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res>
       directors: directors == freezed
           ? _value.directors
           : directors // ignore: cast_nullable_to_non_nullable
-              as List<Directors>,
+              as List<Person>,
       writers: writers == freezed
           ? _value.writers
           : writers // ignore: cast_nullable_to_non_nullable
-              as List<Writers>,
+              as List<Person>,
       stars: stars == freezed
           ? _value.stars
           : stars // ignore: cast_nullable_to_non_nullable
-              as List<Stars>,
+              as List<Person>,
     ));
   }
 }
@@ -533,11 +533,11 @@ class _$_Movie implements _Movie {
   @override
   final List<Genre> genres;
   @override
-  final List<Directors> directors;
+  final List<Person> directors;
   @override
-  final List<Writers> writers;
+  final List<Person> writers;
   @override
-  final List<Stars> stars;
+  final List<Person> stars;
 
   @override
   String toString() {
@@ -607,9 +607,9 @@ abstract class _Movie implements Movie {
       required String poster,
       @JsonKey(name: 'bg_picture') required String bgPicture,
       required List<Genre> genres,
-      required List<Directors> directors,
-      required List<Writers> writers,
-      required List<Stars> stars}) = _$_Movie;
+      required List<Person> directors,
+      required List<Person> writers,
+      required List<Person> stars}) = _$_Movie;
 
   factory _Movie.fromJson(Map<String, dynamic> json) = _$_Movie.fromJson;
 
@@ -638,11 +638,11 @@ abstract class _Movie implements Movie {
   @override
   List<Genre> get genres;
   @override
-  List<Directors> get directors;
+  List<Person> get directors;
   @override
-  List<Writers> get writers;
+  List<Person> get writers;
   @override
-  List<Stars> get stars;
+  List<Person> get stars;
   @override
   @JsonKey(ignore: true)
   _$MovieCopyWith<_Movie> get copyWith => throw _privateConstructorUsedError;
@@ -814,35 +814,35 @@ abstract class _Genre implements Genre {
   _$GenreCopyWith<_Genre> get copyWith => throw _privateConstructorUsedError;
 }
 
-Directors _$DirectorsFromJson(Map<String, dynamic> json) {
-  return _Directors.fromJson(json);
+Person _$PersonFromJson(Map<String, dynamic> json) {
+  return _Person.fromJson(json);
 }
 
 /// @nodoc
-class _$DirectorsTearOff {
-  const _$DirectorsTearOff();
+class _$PersonTearOff {
+  const _$PersonTearOff();
 
-  _Directors call(
+  _Person call(
       {required int id,
       @JsonKey(name: 'first_name') required String firstName,
       @JsonKey(name: 'last_name') required String lastName}) {
-    return _Directors(
+    return _Person(
       id: id,
       firstName: firstName,
       lastName: lastName,
     );
   }
 
-  Directors fromJson(Map<String, Object?> json) {
-    return Directors.fromJson(json);
+  Person fromJson(Map<String, Object?> json) {
+    return Person.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Directors = _$DirectorsTearOff();
+const $Person = _$PersonTearOff();
 
 /// @nodoc
-mixin _$Directors {
+mixin _$Person {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'first_name')
   String get firstName => throw _privateConstructorUsedError;
@@ -851,14 +851,13 @@ mixin _$Directors {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DirectorsCopyWith<Directors> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PersonCopyWith<Person> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DirectorsCopyWith<$Res> {
-  factory $DirectorsCopyWith(Directors value, $Res Function(Directors) then) =
-      _$DirectorsCopyWithImpl<$Res>;
+abstract class $PersonCopyWith<$Res> {
+  factory $PersonCopyWith(Person value, $Res Function(Person) then) =
+      _$PersonCopyWithImpl<$Res>;
   $Res call(
       {int id,
       @JsonKey(name: 'first_name') String firstName,
@@ -866,12 +865,12 @@ abstract class $DirectorsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DirectorsCopyWithImpl<$Res> implements $DirectorsCopyWith<$Res> {
-  _$DirectorsCopyWithImpl(this._value, this._then);
+class _$PersonCopyWithImpl<$Res> implements $PersonCopyWith<$Res> {
+  _$PersonCopyWithImpl(this._value, this._then);
 
-  final Directors _value;
+  final Person _value;
   // ignore: unused_field
-  final $Res Function(Directors) _then;
+  final $Res Function(Person) _then;
 
   @override
   $Res call({
@@ -897,10 +896,9 @@ class _$DirectorsCopyWithImpl<$Res> implements $DirectorsCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DirectorsCopyWith<$Res> implements $DirectorsCopyWith<$Res> {
-  factory _$DirectorsCopyWith(
-          _Directors value, $Res Function(_Directors) then) =
-      __$DirectorsCopyWithImpl<$Res>;
+abstract class _$PersonCopyWith<$Res> implements $PersonCopyWith<$Res> {
+  factory _$PersonCopyWith(_Person value, $Res Function(_Person) then) =
+      __$PersonCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -909,13 +907,13 @@ abstract class _$DirectorsCopyWith<$Res> implements $DirectorsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DirectorsCopyWithImpl<$Res> extends _$DirectorsCopyWithImpl<$Res>
-    implements _$DirectorsCopyWith<$Res> {
-  __$DirectorsCopyWithImpl(_Directors _value, $Res Function(_Directors) _then)
-      : super(_value, (v) => _then(v as _Directors));
+class __$PersonCopyWithImpl<$Res> extends _$PersonCopyWithImpl<$Res>
+    implements _$PersonCopyWith<$Res> {
+  __$PersonCopyWithImpl(_Person _value, $Res Function(_Person) _then)
+      : super(_value, (v) => _then(v as _Person));
 
   @override
-  _Directors get _value => super._value as _Directors;
+  _Person get _value => super._value as _Person;
 
   @override
   $Res call({
@@ -923,7 +921,7 @@ class __$DirectorsCopyWithImpl<$Res> extends _$DirectorsCopyWithImpl<$Res>
     Object? firstName = freezed,
     Object? lastName = freezed,
   }) {
-    return _then(_Directors(
+    return _then(_Person(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -942,14 +940,14 @@ class __$DirectorsCopyWithImpl<$Res> extends _$DirectorsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Directors implements _Directors {
-  const _$_Directors(
+class _$_Person implements _Person {
+  const _$_Person(
       {required this.id,
       @JsonKey(name: 'first_name') required this.firstName,
       @JsonKey(name: 'last_name') required this.lastName});
 
-  factory _$_Directors.fromJson(Map<String, dynamic> json) =>
-      _$$_DirectorsFromJson(json);
+  factory _$_Person.fromJson(Map<String, dynamic> json) =>
+      _$$_PersonFromJson(json);
 
   @override
   final int id;
@@ -962,14 +960,14 @@ class _$_Directors implements _Directors {
 
   @override
   String toString() {
-    return 'Directors(id: $id, firstName: $firstName, lastName: $lastName)';
+    return 'Person(id: $id, firstName: $firstName, lastName: $lastName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Directors &&
+            other is _Person &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.firstName, firstName) &&
             const DeepCollectionEquality().equals(other.lastName, lastName));
@@ -984,23 +982,22 @@ class _$_Directors implements _Directors {
 
   @JsonKey(ignore: true)
   @override
-  _$DirectorsCopyWith<_Directors> get copyWith =>
-      __$DirectorsCopyWithImpl<_Directors>(this, _$identity);
+  _$PersonCopyWith<_Person> get copyWith =>
+      __$PersonCopyWithImpl<_Person>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DirectorsToJson(this);
+    return _$$_PersonToJson(this);
   }
 }
 
-abstract class _Directors implements Directors {
-  const factory _Directors(
+abstract class _Person implements Person {
+  const factory _Person(
       {required int id,
       @JsonKey(name: 'first_name') required String firstName,
-      @JsonKey(name: 'last_name') required String lastName}) = _$_Directors;
+      @JsonKey(name: 'last_name') required String lastName}) = _$_Person;
 
-  factory _Directors.fromJson(Map<String, dynamic> json) =
-      _$_Directors.fromJson;
+  factory _Person.fromJson(Map<String, dynamic> json) = _$_Person.fromJson;
 
   @override
   int get id;
@@ -1012,403 +1009,5 @@ abstract class _Directors implements Directors {
   String get lastName;
   @override
   @JsonKey(ignore: true)
-  _$DirectorsCopyWith<_Directors> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Writers _$WritersFromJson(Map<String, dynamic> json) {
-  return _Writers.fromJson(json);
-}
-
-/// @nodoc
-class _$WritersTearOff {
-  const _$WritersTearOff();
-
-  _Writers call(
-      {required int id,
-      @JsonKey(name: 'first_name') required String firstName,
-      @JsonKey(name: 'last_name') required String lastName}) {
-    return _Writers(
-      id: id,
-      firstName: firstName,
-      lastName: lastName,
-    );
-  }
-
-  Writers fromJson(Map<String, Object?> json) {
-    return Writers.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Writers = _$WritersTearOff();
-
-/// @nodoc
-mixin _$Writers {
-  int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'first_name')
-  String get firstName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'last_name')
-  String get lastName => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $WritersCopyWith<Writers> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WritersCopyWith<$Res> {
-  factory $WritersCopyWith(Writers value, $Res Function(Writers) then) =
-      _$WritersCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      @JsonKey(name: 'first_name') String firstName,
-      @JsonKey(name: 'last_name') String lastName});
-}
-
-/// @nodoc
-class _$WritersCopyWithImpl<$Res> implements $WritersCopyWith<$Res> {
-  _$WritersCopyWithImpl(this._value, this._then);
-
-  final Writers _value;
-  // ignore: unused_field
-  final $Res Function(Writers) _then;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$WritersCopyWith<$Res> implements $WritersCopyWith<$Res> {
-  factory _$WritersCopyWith(_Writers value, $Res Function(_Writers) then) =
-      __$WritersCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {int id,
-      @JsonKey(name: 'first_name') String firstName,
-      @JsonKey(name: 'last_name') String lastName});
-}
-
-/// @nodoc
-class __$WritersCopyWithImpl<$Res> extends _$WritersCopyWithImpl<$Res>
-    implements _$WritersCopyWith<$Res> {
-  __$WritersCopyWithImpl(_Writers _value, $Res Function(_Writers) _then)
-      : super(_value, (v) => _then(v as _Writers));
-
-  @override
-  _Writers get _value => super._value as _Writers;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-  }) {
-    return _then(_Writers(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_Writers implements _Writers {
-  const _$_Writers(
-      {required this.id,
-      @JsonKey(name: 'first_name') required this.firstName,
-      @JsonKey(name: 'last_name') required this.lastName});
-
-  factory _$_Writers.fromJson(Map<String, dynamic> json) =>
-      _$$_WritersFromJson(json);
-
-  @override
-  final int id;
-  @override
-  @JsonKey(name: 'first_name')
-  final String firstName;
-  @override
-  @JsonKey(name: 'last_name')
-  final String lastName;
-
-  @override
-  String toString() {
-    return 'Writers(id: $id, firstName: $firstName, lastName: $lastName)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Writers &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.firstName, firstName) &&
-            const DeepCollectionEquality().equals(other.lastName, lastName));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(firstName),
-      const DeepCollectionEquality().hash(lastName));
-
-  @JsonKey(ignore: true)
-  @override
-  _$WritersCopyWith<_Writers> get copyWith =>
-      __$WritersCopyWithImpl<_Writers>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_WritersToJson(this);
-  }
-}
-
-abstract class _Writers implements Writers {
-  const factory _Writers(
-      {required int id,
-      @JsonKey(name: 'first_name') required String firstName,
-      @JsonKey(name: 'last_name') required String lastName}) = _$_Writers;
-
-  factory _Writers.fromJson(Map<String, dynamic> json) = _$_Writers.fromJson;
-
-  @override
-  int get id;
-  @override
-  @JsonKey(name: 'first_name')
-  String get firstName;
-  @override
-  @JsonKey(name: 'last_name')
-  String get lastName;
-  @override
-  @JsonKey(ignore: true)
-  _$WritersCopyWith<_Writers> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Stars _$StarsFromJson(Map<String, dynamic> json) {
-  return _Stars.fromJson(json);
-}
-
-/// @nodoc
-class _$StarsTearOff {
-  const _$StarsTearOff();
-
-  _Stars call(
-      {required int id,
-      @JsonKey(name: 'first_name') required String firstName,
-      @JsonKey(name: 'last_name') required String lastName}) {
-    return _Stars(
-      id: id,
-      firstName: firstName,
-      lastName: lastName,
-    );
-  }
-
-  Stars fromJson(Map<String, Object?> json) {
-    return Stars.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Stars = _$StarsTearOff();
-
-/// @nodoc
-mixin _$Stars {
-  int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'first_name')
-  String get firstName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'last_name')
-  String get lastName => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StarsCopyWith<Stars> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StarsCopyWith<$Res> {
-  factory $StarsCopyWith(Stars value, $Res Function(Stars) then) =
-      _$StarsCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      @JsonKey(name: 'first_name') String firstName,
-      @JsonKey(name: 'last_name') String lastName});
-}
-
-/// @nodoc
-class _$StarsCopyWithImpl<$Res> implements $StarsCopyWith<$Res> {
-  _$StarsCopyWithImpl(this._value, this._then);
-
-  final Stars _value;
-  // ignore: unused_field
-  final $Res Function(Stars) _then;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$StarsCopyWith<$Res> implements $StarsCopyWith<$Res> {
-  factory _$StarsCopyWith(_Stars value, $Res Function(_Stars) then) =
-      __$StarsCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {int id,
-      @JsonKey(name: 'first_name') String firstName,
-      @JsonKey(name: 'last_name') String lastName});
-}
-
-/// @nodoc
-class __$StarsCopyWithImpl<$Res> extends _$StarsCopyWithImpl<$Res>
-    implements _$StarsCopyWith<$Res> {
-  __$StarsCopyWithImpl(_Stars _value, $Res Function(_Stars) _then)
-      : super(_value, (v) => _then(v as _Stars));
-
-  @override
-  _Stars get _value => super._value as _Stars;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-  }) {
-    return _then(_Stars(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_Stars implements _Stars {
-  const _$_Stars(
-      {required this.id,
-      @JsonKey(name: 'first_name') required this.firstName,
-      @JsonKey(name: 'last_name') required this.lastName});
-
-  factory _$_Stars.fromJson(Map<String, dynamic> json) =>
-      _$$_StarsFromJson(json);
-
-  @override
-  final int id;
-  @override
-  @JsonKey(name: 'first_name')
-  final String firstName;
-  @override
-  @JsonKey(name: 'last_name')
-  final String lastName;
-
-  @override
-  String toString() {
-    return 'Stars(id: $id, firstName: $firstName, lastName: $lastName)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Stars &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.firstName, firstName) &&
-            const DeepCollectionEquality().equals(other.lastName, lastName));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(firstName),
-      const DeepCollectionEquality().hash(lastName));
-
-  @JsonKey(ignore: true)
-  @override
-  _$StarsCopyWith<_Stars> get copyWith =>
-      __$StarsCopyWithImpl<_Stars>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_StarsToJson(this);
-  }
-}
-
-abstract class _Stars implements Stars {
-  const factory _Stars(
-      {required int id,
-      @JsonKey(name: 'first_name') required String firstName,
-      @JsonKey(name: 'last_name') required String lastName}) = _$_Stars;
-
-  factory _Stars.fromJson(Map<String, dynamic> json) = _$_Stars.fromJson;
-
-  @override
-  int get id;
-  @override
-  @JsonKey(name: 'first_name')
-  String get firstName;
-  @override
-  @JsonKey(name: 'last_name')
-  String get lastName;
-  @override
-  @JsonKey(ignore: true)
-  _$StarsCopyWith<_Stars> get copyWith => throw _privateConstructorUsedError;
+  _$PersonCopyWith<_Person> get copyWith => throw _privateConstructorUsedError;
 }

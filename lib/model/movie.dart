@@ -6,14 +6,14 @@ part 'movie.freezed.dart';
 part 'movie.g.dart';
 
 @freezed
-class ListMovies with _$ListMovies {
-  const factory ListMovies({
+class MoviesPage with _$MoviesPage {
+  const factory MoviesPage({
     required int total,
     required int pages,
     @JsonKey(name: 'results') required List<Movie> movies,
-  }) = _ListMovies;
+  }) = _MoviesPage;
 
-  factory ListMovies.fromJson(Map<String, dynamic> json) => _$ListMoviesFromJson(json);
+  factory MoviesPage.fromJson(Map<String, dynamic> json) => _$MoviesPageFromJson(json);
 }
 
 @freezed
@@ -29,9 +29,9 @@ class Movie with _$Movie {
     required String poster,
     @JsonKey(name: 'bg_picture') required String bgPicture,
     required List<Genre> genres,
-    required List<Directors> directors,
-    required List<Writers> writers,
-    required List<Stars> stars,
+    required List<Person> directors,
+    required List<Person> writers,
+    required List<Person> stars,
   }) = _Movie;
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
@@ -48,34 +48,12 @@ class Genre with _$Genre {
 }
 
 @freezed
-class Directors with _$Directors {
-  const factory Directors({
+class Person with _$Person {
+  const factory Person({
     required int id,
     @JsonKey(name: 'first_name') required String firstName,
     @JsonKey(name: 'last_name') required String lastName,
-  }) = _Directors;
+  }) = _Person;
 
-  factory Directors.fromJson(Map<String, dynamic> json) => _$DirectorsFromJson(json);
-}
-
-@freezed
-class Writers with _$Writers {
-  const factory Writers({
-    required int id,
-    @JsonKey(name: 'first_name') required String firstName,
-    @JsonKey(name: 'last_name') required String lastName,
-  }) = _Writers;
-
-  factory Writers.fromJson(Map<String, dynamic> json) => _$WritersFromJson(json);
-}
-
-@freezed
-class Stars with _$Stars {
-  const factory Stars({
-    required int id,
-    @JsonKey(name: 'first_name') required String firstName,
-    @JsonKey(name: 'last_name') required String lastName,
-  }) = _Stars;
-
-  factory Stars.fromJson(Map<String, dynamic> json) => _$StarsFromJson(json);
+  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 }

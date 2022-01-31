@@ -239,7 +239,7 @@ class _$MoviesStateTearOff {
     return const MovieStateLoading();
   }
 
-  MovieStateLoaded loaded({required ListMovies moviesLoaded}) {
+  MovieStateLoaded loaded({required MoviesPage moviesLoaded}) {
     return MovieStateLoaded(
       moviesLoaded: moviesLoaded,
     );
@@ -258,21 +258,21 @@ mixin _$MoviesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(ListMovies moviesLoaded) loaded,
+    required TResult Function(MoviesPage moviesLoaded) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -359,7 +359,7 @@ class _$MovieStateLoading implements MovieStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(ListMovies moviesLoaded) loaded,
+    required TResult Function(MoviesPage moviesLoaded) loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -369,7 +369,7 @@ class _$MovieStateLoading implements MovieStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
   }) {
     return loading?.call();
@@ -379,7 +379,7 @@ class _$MovieStateLoading implements MovieStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -433,9 +433,9 @@ abstract class $MovieStateLoadedCopyWith<$Res> {
   factory $MovieStateLoadedCopyWith(
           MovieStateLoaded value, $Res Function(MovieStateLoaded) then) =
       _$MovieStateLoadedCopyWithImpl<$Res>;
-  $Res call({ListMovies moviesLoaded});
+  $Res call({MoviesPage moviesLoaded});
 
-  $ListMoviesCopyWith<$Res> get moviesLoaded;
+  $MoviesPageCopyWith<$Res> get moviesLoaded;
 }
 
 /// @nodoc
@@ -457,13 +457,13 @@ class _$MovieStateLoadedCopyWithImpl<$Res>
       moviesLoaded: moviesLoaded == freezed
           ? _value.moviesLoaded
           : moviesLoaded // ignore: cast_nullable_to_non_nullable
-              as ListMovies,
+              as MoviesPage,
     ));
   }
 
   @override
-  $ListMoviesCopyWith<$Res> get moviesLoaded {
-    return $ListMoviesCopyWith<$Res>(_value.moviesLoaded, (value) {
+  $MoviesPageCopyWith<$Res> get moviesLoaded {
+    return $MoviesPageCopyWith<$Res>(_value.moviesLoaded, (value) {
       return _then(_value.copyWith(moviesLoaded: value));
     });
   }
@@ -475,7 +475,7 @@ class _$MovieStateLoaded implements MovieStateLoaded {
   const _$MovieStateLoaded({required this.moviesLoaded});
 
   @override
-  final ListMovies moviesLoaded;
+  final MoviesPage moviesLoaded;
 
   @override
   String toString() {
@@ -504,7 +504,7 @@ class _$MovieStateLoaded implements MovieStateLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(ListMovies moviesLoaded) loaded,
+    required TResult Function(MoviesPage moviesLoaded) loaded,
     required TResult Function() error,
   }) {
     return loaded(moviesLoaded);
@@ -514,7 +514,7 @@ class _$MovieStateLoaded implements MovieStateLoaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
   }) {
     return loaded?.call(moviesLoaded);
@@ -524,7 +524,7 @@ class _$MovieStateLoaded implements MovieStateLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -570,10 +570,10 @@ class _$MovieStateLoaded implements MovieStateLoaded {
 }
 
 abstract class MovieStateLoaded implements MoviesState {
-  const factory MovieStateLoaded({required ListMovies moviesLoaded}) =
+  const factory MovieStateLoaded({required MoviesPage moviesLoaded}) =
       _$MovieStateLoaded;
 
-  ListMovies get moviesLoaded;
+  MoviesPage get moviesLoaded;
   @JsonKey(ignore: true)
   $MovieStateLoadedCopyWith<MovieStateLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -621,7 +621,7 @@ class _$MovieStateError implements MovieStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(ListMovies moviesLoaded) loaded,
+    required TResult Function(MoviesPage moviesLoaded) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -631,7 +631,7 @@ class _$MovieStateError implements MovieStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
   }) {
     return error?.call();
@@ -641,7 +641,7 @@ class _$MovieStateError implements MovieStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(ListMovies moviesLoaded)? loaded,
+    TResult Function(MoviesPage moviesLoaded)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

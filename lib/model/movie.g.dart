@@ -6,8 +6,8 @@ part of 'movie.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ListMovies _$$_ListMoviesFromJson(Map<String, dynamic> json) =>
-    _$_ListMovies(
+_$_MoviesPage _$$_MoviesPageFromJson(Map<String, dynamic> json) =>
+    _$_MoviesPage(
       total: json['total'] as int,
       pages: json['pages'] as int,
       movies: (json['results'] as List<dynamic>)
@@ -15,7 +15,7 @@ _$_ListMovies _$$_ListMoviesFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_ListMoviesToJson(_$_ListMovies instance) =>
+Map<String, dynamic> _$$_MoviesPageToJson(_$_MoviesPage instance) =>
     <String, dynamic>{
       'total': instance.total,
       'pages': instance.pages,
@@ -36,13 +36,13 @@ _$_Movie _$$_MovieFromJson(Map<String, dynamic> json) => _$_Movie(
           .map((e) => Genre.fromJson(e as Map<String, dynamic>))
           .toList(),
       directors: (json['directors'] as List<dynamic>)
-          .map((e) => Directors.fromJson(e as Map<String, dynamic>))
+          .map((e) => Person.fromJson(e as Map<String, dynamic>))
           .toList(),
       writers: (json['writers'] as List<dynamic>)
-          .map((e) => Writers.fromJson(e as Map<String, dynamic>))
+          .map((e) => Person.fromJson(e as Map<String, dynamic>))
           .toList(),
       stars: (json['stars'] as List<dynamic>)
-          .map((e) => Stars.fromJson(e as Map<String, dynamic>))
+          .map((e) => Person.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -72,39 +72,13 @@ Map<String, dynamic> _$$_GenreToJson(_$_Genre instance) => <String, dynamic>{
       'title': instance.title,
     };
 
-_$_Directors _$$_DirectorsFromJson(Map<String, dynamic> json) => _$_Directors(
+_$_Person _$$_PersonFromJson(Map<String, dynamic> json) => _$_Person(
       id: json['id'] as int,
       firstName: json['first_name'] as String,
       lastName: json['last_name'] as String,
     );
 
-Map<String, dynamic> _$$_DirectorsToJson(_$_Directors instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-    };
-
-_$_Writers _$$_WritersFromJson(Map<String, dynamic> json) => _$_Writers(
-      id: json['id'] as int,
-      firstName: json['first_name'] as String,
-      lastName: json['last_name'] as String,
-    );
-
-Map<String, dynamic> _$$_WritersToJson(_$_Writers instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-    };
-
-_$_Stars _$$_StarsFromJson(Map<String, dynamic> json) => _$_Stars(
-      id: json['id'] as int,
-      firstName: json['first_name'] as String,
-      lastName: json['last_name'] as String,
-    );
-
-Map<String, dynamic> _$$_StarsToJson(_$_Stars instance) => <String, dynamic>{
+Map<String, dynamic> _$$_PersonToJson(_$_Person instance) => <String, dynamic>{
       'id': instance.id,
       'first_name': instance.firstName,
       'last_name': instance.lastName,

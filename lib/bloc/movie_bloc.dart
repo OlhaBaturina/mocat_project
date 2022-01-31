@@ -13,7 +13,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     on<MoviesEventLoad>((event, emit) async {
       emit(const MoviesState.loading());
       try {
-        ListMovies _moviesLoaded = await moviesRepo
+        MoviesPage _moviesLoaded = await moviesRepo
         .getMovies(event.page)
         .timeout(const Duration(seconds: 5));
         emit(MoviesState.loaded(moviesLoaded: _moviesLoaded));

@@ -11,9 +11,9 @@ class MovieDetailsInfo extends StatelessWidget {
   String mpaRating;
   String imdbRating;
   List<Genre> genres;
-  List<Directors> directors;
-  List<Writers> writers;
-  List<Stars> stars;
+  List<Person> directors;
+  List<Person> writers;
+  List<Person> stars;
   EdgeInsetsGeometry margin;
   VoidCallback? onButtonTap;
 
